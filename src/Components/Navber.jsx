@@ -1,5 +1,6 @@
 import { Link, useNavigate } from "react-router-dom";
 import useAuth from "../hooks/useAuth";
+import logoBlog from '../assets/logo.png'
 
 
 const Navber = () => {
@@ -14,14 +15,14 @@ const Navber = () => {
     }
 
     const links = <>
-        <li><Link to='/'>Home</Link></li>
-        <li><Link to='/all-blogs'>All Blogs</Link></li>
-        <li><Link to='/add-blogs'>Add Blogs</Link></li>
-        <li><Link to='/featured-blogs'>Featured</Link></li>
-        <li><Link to='/my-wishlist'>Wishlist </Link></li>
+        <li className="font-semibold"><Link to='/'>Home</Link></li>
+        <li className="font-semibold"><Link to='/all-blogs'>All Blogs</Link></li>
+        <li className="font-semibold"><Link to='/add-blogs'>Add Blogs</Link></li>
+        <li className="font-semibold"><Link to='/featured-blogs'>Featured</Link></li>
+        <li className="font-semibold"><Link to='/my-wishlist'>Wishlist </Link></li>
     </>
     return (
-        <div className="navbar bg-base-100">
+        <div className="navbar lg:px-20 mt-4 bg-green-50">
             <div className="navbar-start">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -44,7 +45,10 @@ const Navber = () => {
                         {links}
                     </ul>
                 </div>
-                <a className="btn btn-ghost text-xl">daisyUI</a>
+                <div className="flex w-6 h-4 items-center">
+                    <img src={logoBlog} alt="" />
+                    <Link to='/' className="btn btn-ghost text-purple-600 text-xl">Blog Website</Link>
+                </div>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
@@ -57,12 +61,12 @@ const Navber = () => {
                         <div className="mr-6">
                             <img referrerPolicy="no-referrer" className="w-12 h-12 rounded-full" src={user?.photoURL} alt="" />
                         </div>
-                        <button onClick={handleUserLogout} className="btn btn-warning">LogOut</button>
+                        <button onClick={handleUserLogout} className="border px-4 py-2 text-base font-medium text-white bg-purple-600 rounded-lg hover:bg-purple-700">LogOut</button>
                     </>
                         :
                         <div>
-                            <Link to='/register'><button className="btn btn-warning mr-4">Register</button></Link>
-                            <Link to='/login'><button className="btn btn-warning">LogIn</button></Link>
+                            <Link to='/register'><button className="border px-4 py-2 text-base font-medium text-white bg-purple-600 rounded-lg hover:bg-purple-700 mr-2">Register</button></Link>
+                            <Link to='/login'><button className="border px-4 py-2 text-base font-medium text-white bg-purple-600 rounded-lg hover:bg-purple-700">LogIn</button></Link>
                         </div>
                 }
             </div>
