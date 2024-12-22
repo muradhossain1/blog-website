@@ -18,7 +18,7 @@ const Navber = () => {
         <li className="font-semibold"><Link to='/'>Home</Link></li>
         <li className="font-semibold"><Link to='/all-blogs'>All Blogs</Link></li>
         <li className="font-semibold"><Link to='/add-blogs'>Add Blogs</Link></li>
-        <li className="font-semibold"><Link to='/featured-blogs'>Featured</Link></li>
+        <li className="font-semibold"><Link to='/featured'>Featured</Link></li>
         <li className="font-semibold"><Link to='/my-wishlist'>Wishlist </Link></li>
     </>
     return (
@@ -45,9 +45,9 @@ const Navber = () => {
                         {links}
                     </ul>
                 </div>
-                <div className="flex w-6 h-4 items-center">
-                    <img src={logoBlog} alt="" />
-                    <Link to='/' className="btn btn-ghost text-purple-600 text-xl">Blog Website</Link>
+                <div className="flex items-center gap-3">
+                    <img className="w-8 hidden md:block" src={logoBlog} alt="" />
+                    <Link to='/' className="text-lg md:text-2xl font-bold text-purple-600 ">Blog Website</Link>
                 </div>
             </div>
             <div className="navbar-center hidden lg:flex">

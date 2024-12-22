@@ -28,7 +28,7 @@ const routes = createBrowserRouter([
                 element: <PrivateRoute><AddBlogs></AddBlogs></PrivateRoute>
             },
             {
-                path: '/featured-blogs',
+                path: '/featured',
                 element: <FeaturedBlogs></FeaturedBlogs>
             },
             {

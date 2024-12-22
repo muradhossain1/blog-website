@@ -1,16 +1,18 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import useAuth from "../hooks/useAuth";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import Lottie from "lottie-react";
 import registerLottie from '../assets/lottie/register.json'
+import toast from "react-hot-toast";
 
 
 const Register = () => {
     const { createUser, updateProfileUser } = useAuth();
     const [error, setError] = useState('');
-    const [showPassword, setShowPassword] = useState(false)
-    // console.log(data);
+    const [showPassword, setShowPassword] = useState(false);
+    const location = useLocation();
+    const navigate = useNavigate();
 
     const handleRegister = e => {
         e.preventDefault();
@@ -19,27 +21,24 @@ const Register = () => {
         const email = form.email.value;
         const photo = form.photo.value;
         const password = form.password.value;
-        // if (password.length < 6) {
-        //     return setError('Password must contain at least 6 character')
-        // }
-        // if (!/[a-z]/.test(password)) {
-        //     return setError('Password must contain at least one lowercase letter')
-        // }
-        // if (!/[A-Z]/.test(password)) {
-        //     return setError('Password must contain at least one uppercase letter')
-        // }
-        console.log(password, email)
+        if (password.length < 6) {
+            return setError('Password must contain at least 6 character')
+        }
+        if (!/[A-Z]/.test(password)) {
+            return setError('Password must contain at least one uppercase letter')
+        }
+        if (!/[0-9]/.test(password)) {
+            return setError('Password must contain at least one numeric character')
+        }
+        if (!/[!@#$%^&*(),.?":{}|<>]/.test(password)) {
+            return setError('Password must contain at least one special character ')
+        }
 
         createUser(email, password)
-            .then((result) => {
-                console.log(result.user)
-                // toast.success('Successful your google account Register', {
-                //     position: "top-center",
-                // })
-
+            .then(() => {
+                toast.success('Successful your google account Register')
                 updateProfileUser(name, photo);
-
-                // navigate(location?.state ? location.state : '/');
+                navigate(location?.state ? location.state : '/');
             })
             .catch(error => {
                 setError(error.message)

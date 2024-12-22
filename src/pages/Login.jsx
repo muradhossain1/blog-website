@@ -1,13 +1,17 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import useAuth from "../hooks/useAuth";
 import { useState } from "react";
 import Lottie from "lottie-react";
 import loginLottie from '../assets/lottie/login.json'
+import toast from "react-hot-toast";
+
 
 
 const Login = () => {
     const { loginUser, loginWithGoogle } = useAuth()
     const [error, setError] = useState('')
+    const location = useLocation();
+    const navigate = useNavigate();
 
     const handleLogin = e => {
         e.preventDefault()
@@ -15,29 +19,21 @@ const Login = () => {
         const password = e.target.password.value;
 
         loginUser(email, password)
-            .then((result) => {
-                console.log(result.user)
-                // toast.success('Successful your account Login', {
-                //     position: "top-center",
-                // })
-                // navigate(location?.state ? location.state : '/')
+            .then(() => {
+                toast.success('Successful your account Login')
+                navigate(location?.state ? location.state : '/')
             })
             .catch(error => {
                 setError(error.message)
-                // toast.error("Authentication did't match", {
-                //     position: "top-center"
-                // })
+                toast.error("Authentication did't match")
             })
     };
 
     const handleLoginGoogle = () => {
         loginWithGoogle()
-            .then((result) => {
-                console.log(result.user)
-                // toast.success('Successful your google account Login',{
-                //     position: "top-center",
-                // })
-                // navigate(location?.state ? location.state : '/')
+            .then(() => {
+                toast.success('Successful your google account Login')
+                navigate(location?.state ? location.state : '/')
             })
             .catch(err => {
                 setError(err.message)
