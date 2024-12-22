@@ -22,10 +22,10 @@ const BlogCrad = ({ blog }) => {
                 </div>
 
                 <div className="card-actions grid grid-cols-2">
-                    <button className="btn w-full btn-primary">
+                    <button className="w-full px-4 py-2 text-base font-medium text-white bg-gray-800 rounded-md hover:bg-gray-700">
                         <Link to={`/details/${_id}`}>Details</Link>
                     </button>
-                    <button className="btn w-full btn-primary">
+                    <button className="w-full px-4 py-2 text-base font-medium text-white bg-gray-800 rounded-md hover:bg-gray-700">
                         <Link to={`/my-wishlist`}>Wishlist</Link>
                     </button>
                 </div>

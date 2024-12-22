@@ -61,12 +61,12 @@ const Navber = () => {
                         <div className="mr-6">
                             <img referrerPolicy="no-referrer" className="w-12 h-12 rounded-full" src={user?.photoURL} alt="" />
                         </div>
-                        <button onClick={handleUserLogout} className="border px-4 py-2 text-base font-medium text-white bg-purple-600 rounded-lg hover:bg-purple-700">LogOut</button>
+                        <button onClick={handleUserLogout} className=" px-4 py-2 text-base font-medium text-white bg-purple-600 rounded-lg hover:bg-purple-700">LogOut</button>
                     </>
                         :
                         <div>
-                            <Link to='/register'><button className="border px-4 py-2 text-base font-medium text-white bg-purple-600 rounded-lg hover:bg-purple-700 mr-2">Register</button></Link>
-                            <Link to='/login'><button className="border px-4 py-2 text-base font-medium text-white bg-purple-600 rounded-lg hover:bg-purple-700">LogIn</button></Link>
+                            <Link to='/register'><button className=" px-4 py-2 text-base font-medium text-white bg-purple-600 rounded-lg hover:bg-purple-700 mr-2">Register</button></Link>
+                            <Link to='/login'><button className=" px-4 py-2 text-base font-medium text-white bg-purple-600 rounded-lg hover:bg-purple-700">LogIn</button></Link>
                         </div>
                 }
             </div>

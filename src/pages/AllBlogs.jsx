@@ -5,15 +5,16 @@ import BlogCrad from "../Components/BlogCrad";
 
 const AllBlogs = () => {
     const [blogs, setBlogs] = useState([])
+    const [filter, setFilter] = useState('');
+    const [search, setSearch] = useState('');
 
     useEffect(() => {
         const fetchAllBlogs = async () => {
-            const { data } = await axios.get(`${import.meta.env.VITE_API_URL}/all-blogs`);
+            const { data } = await axios.get(`${import.meta.env.VITE_API_URL}/all-blogs?filter=${filter}&search=${search}`);
             setBlogs(data)
         }
         fetchAllBlogs()
-    }, [])
-
+    }, [filter, search])
     return (
         <div>
             <div className='flex flex-col md:flex-row justify-center items-center gap-5 mt-4 '>
@@ -21,6 +22,8 @@ const AllBlogs = () => {
                     <select
                         name='category'
                         id='category'
+                        onChange={(e) => setFilter(e.target.value)}
+                        value={filter}
                         className='border px-4 py-3 rounded-lg'
                     >
                         <option value='' >Filter By Category</option>
@@ -36,11 +39,13 @@ const AllBlogs = () => {
                             className='px-6 py-2 text-gray-700 placeholder-gray-500 bg-white outline-none focus:placeholder-transparent'
                             type='text'
                             name='search'
-                            placeholder='Enter Blog Title'
+                            onChange={e => setSearch(e.target.value)}
+                            value={search}
+                            placeholder='Enter Blog Title...'
                             aria-label='Enter Blog Title'
                         />
 
-                        <button className='px-1 md:px-4 py-2 text-sm font-medium tracking-wider text-gray-100 uppercase transition-colors duration-300 transform bg-purple-600 rounded-md hover:bg-purple-700 '>
+                        <button onClick={e => e.preventDefault()} className='px-1 md:px-4 py-2 text-sm font-medium tracking-wider text-gray-100 uppercase transition-colors duration-300 transform bg-purple-600 rounded-md hover:bg-purple-700 '>
                             Search
                         </button>
                     </div>
