@@ -3,6 +3,7 @@ import Banner from "../Components/Banner";
 import BlogCrad from "../Components/BlogCrad";
 import NewLetter from "../Components/NewLetter";
 import TrendingNow from "../Components/TrendingNow";
+import EfficientSection from "../Components/EfficientSection";
 
 
 
@@ -24,16 +25,22 @@ const Home = () => {
                         }
                     </div>
                 </div>
-
-                {/* News letter section */}
-                <div>
-                    <NewLetter></NewLetter>
-                </div>
             </main>
 
             {/* extra two sections */}
             <div>
-                <TrendingNow></TrendingNow>
+                {/* extra 1st section */}
+                <div>
+                    <TrendingNow></TrendingNow>
+                </div>
+                {/* extra 2nd section */}
+                <div>
+                    <EfficientSection></EfficientSection>
+                </div>
+                {/* News letter section */}
+                <div>
+                    <NewLetter></NewLetter>
+                </div>
             </div>
         </div>
     );
