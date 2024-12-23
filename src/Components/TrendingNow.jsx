@@ -3,7 +3,7 @@ import { FaCheckCircle } from "react-icons/fa";
 
 const TrendingNow = () => {
     return (
-        <div className="mt-8">
+        <div className="mt-12">
             <h2 className="text-2xl md:text-4xl font-bold ">Tranding Now </h2>
             <div className="flex flex-col md:flex-row gap-6">
                 <div className="hero border rounded-lg p-4 mt-6">
