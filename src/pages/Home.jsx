@@ -2,6 +2,7 @@ import { useLoaderData } from "react-router-dom";
 import Banner from "../Components/Banner";
 import BlogCrad from "../Components/BlogCrad";
 import NewLetter from "../Components/NewLetter";
+import TrendingNow from "../Components/TrendingNow";
 
 
 
@@ -31,7 +32,9 @@ const Home = () => {
             </main>
 
             {/* extra two sections */}
-            <div></div>
+            <div>
+                <TrendingNow></TrendingNow>
+            </div>
         </div>
     );
 };
