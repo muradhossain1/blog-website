@@ -31,7 +31,6 @@ const BlogDetails = () => {
         const user_email = user?.email
         const user_photo = user?.photoURL
         const comment = form.comment.value
-        // const deadline = startDate
 
         const commentData = { blog_Id: _id, comment, user_email, user_photo };
 

@@ -44,7 +44,7 @@ const routes = createBrowserRouter([
             },
             {
                 path: '/update/:id',
-                element: <UpdateBlog></UpdateBlog>,
+                element: <PrivateRoute><UpdateBlog></UpdateBlog></PrivateRoute>,
                 loader: ({params}) => fetch(`${import.meta.env.VITE_API_URL}/blog/${params.id}`)
             },
             {
