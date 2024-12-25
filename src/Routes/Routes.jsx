@@ -9,6 +9,7 @@ import FeaturedBlogs from '../pages/FeaturedBlogs'
 import Wishlist from '../pages/Wishlist'
 import PrivateRoute from './PrivateRoute'
 import BlogDetails from '../pages/BlogDetails'
+import UpdateBlog from '../pages/UpdateBlog'
 
 const routes = createBrowserRouter([
     {
@@ -19,7 +20,7 @@ const routes = createBrowserRouter([
             {
                 path: '/',
                 element: <Home></Home>,
-                loader: () => fetch('http://localhost:5000/recent-blogs')
+                loader: () => fetch(`${import.meta.env.VITE_API_URL}/recent-blogs`)
             },
             {
                 path: '/all-blogs',
@@ -40,6 +41,11 @@ const routes = createBrowserRouter([
             {
                 path: '/details/:id',
                 element: <PrivateRoute><BlogDetails></BlogDetails></PrivateRoute>
+            },
+            {
+                path: '/update/:id',
+                element: <UpdateBlog></UpdateBlog>,
+                loader: ({params}) => fetch(`${import.meta.env.VITE_API_URL}/blog/${params.id}`)
             },
             {
                 path: '/login',
