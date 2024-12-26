@@ -10,12 +10,13 @@ import Wishlist from '../pages/Wishlist'
 import PrivateRoute from './PrivateRoute'
 import BlogDetails from '../pages/BlogDetails'
 import UpdateBlog from '../pages/UpdateBlog'
+import ErrorPage from '../pages/ErrorPage'
 
 const routes = createBrowserRouter([
     {
         path : '/',
         element : <MainLayout></MainLayout>,
-        errorElement: <p>Data no found</p>,
+        errorElement: <ErrorPage></ErrorPage>,
         children : [
             {
                 path: '/',
