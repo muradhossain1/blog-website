@@ -34,7 +34,7 @@ const BlogDetails = () => {
         const comment = form.comment.value
 
         const commentData = { blog_Id: _id, comment, user_email, user_photo };
-
+        console.log(commentData)
         try {
             const { data } = await axios.post(`${import.meta.env.VITE_API_URL}/comments`, commentData);
             form.reset();
@@ -43,7 +43,6 @@ const BlogDetails = () => {
         } catch (err) {
             toast.error(err.response.data)
         }
-        console.log(commentData)
     }
 
 
@@ -53,7 +52,7 @@ const BlogDetails = () => {
                 <img
                     src={photo}
                     alt="Photo"
-                    className="rounded-xl w-full h-36" />
+                    className="rounded-xl w-full h-full" />
             </figure>
             <div className=" space-y-4 mt-4 ">
                 <div className="flex items-center justify-between">
@@ -70,34 +69,41 @@ const BlogDetails = () => {
                     <p className="font-semibold text-lg">Long Description : </p>
                     <p className="text-base text-gray-500">{longDescript}</p>
                 </div>
-                <form >
-                    <div className='flex flex-col mt-4 '>
-                        <label className='text-lg font-semibold  ' htmlFor='description'>
-                            Comment
-                        </label>
-                        {
-                            owner ?
-                                <p className="mt-2 text-base text-gray-500">Can not comment on own blog</p>
-                                :
-                                <textarea
-                                    name='comment'
-                                    id='comment'
-                                    placeholder="Enter Your Comment"
-                                    className='block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md  focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40  focus:outline-none focus:ring'
-                                ></textarea>
-                        }
-                    </div>
-                    <div className='flex justify-end mt-6'>
-                        {
-                            owner ?
-                                <button className='disabled:cursor-not-allowed px-8 py-2.5 leading-5 text-white transition-colors duration-300 transhtmlForm bg-gray-700 rounded-md hover:bg-gray-600 focus:outline-none focus:bg-gray-600'>
-                                    <Link to={`/update/${_id}`}>Update</Link>
-                                </button> : <button onSubmit={handleSubmitComment} className='disabled:cursor-not-allowed px-8 py-2.5 leading-5 text-white transition-colors duration-300 transhtmlForm bg-gray-700 rounded-md hover:bg-gray-600 focus:outline-none focus:bg-gray-600'>
-                                    Comment
-                                </button>
-                        }
-                    </div>
-                </form>
+                <div>
+                    {
+                        owner ?
+                            <div>
+                                <div>
+                                    <p className='text-lg font-semibold  '> Comment :</p>
+                                    <p className="mt-2 text-base text-gray-500">Can not comment on own blog</p>
+                                </div>
+                                <div className="flex justify-end">
+                                    <button className='disabled:cursor-not-allowed px-8 py-2.5 leading-5 text-white mt-2 transition-colors duration-300 transhtmlForm bg-gray-700 rounded-md hover:bg-gray-600 focus:outline-none focus:bg-gray-600'>
+                                        <Link to={`/update/${_id}`}>Update</Link>
+                                    </button>
+                                </div>
+                            </div>
+                            :
+                            <form onSubmit={handleSubmitComment}>
+                                <div className='flex flex-col mt-4 '>
+                                    <label className='text-lg font-semibold  ' htmlFor='description'>
+                                        Comment :
+                                    </label>
+                                    <textarea
+                                        name='comment'
+                                        id='comment'
+                                        placeholder="Enter Your Comment"
+                                        className='block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md  focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40  focus:outline-none focus:ring'
+                                    ></textarea>
+                                </div>
+                                <div className="flex justify-end">
+                                    <button className='disabled:cursor-not-allowed px-8 py-2.5 leading-5 text-white mt-4 transition-colors duration-300 transhtmlForm bg-gray-700 rounded-md hover:bg-gray-600 focus:outline-none focus:bg-gray-600'>
+                                        Comment
+                                    </button>
+                                </div>
+                            </form>
+                    }
+                </div>
             </div>
         </div>
     );

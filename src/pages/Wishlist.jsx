@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import useAuth from "../hooks/useAuth";
 import { Link } from "react-router-dom";
 import useAxiosSecure from "../hooks/useAxiosSecure";
+import toast from "react-hot-toast";
 
 
 
@@ -12,7 +13,6 @@ const Wishlist = () => {
   
     const fetchAllBlogs = async (user) => {
         const { data } = await axiosSecure.get(`/wishlist?email=${user?.email}`);
-        console.log(data)
         setBlogs(data)
     }
     useEffect(() => {
@@ -25,19 +25,18 @@ const Wishlist = () => {
         try {
             const { data } = await axiosSecure.delete(`/wishlist/${id}`);
             console.log(data)
+            toast.success('Remove wishlist Successfully')
             fetchAllBlogs(user)
             // setBlogs(data)
         }
         catch (err) {
-            console.log(err.message)
+            toast.error(err.message)
         }
 
     }
-
-    console.log(blogs.length)
     return (
         <div className="overflow-x-auto md:px-28">
-            <h2 className="text-2xl md:text-4xl text-center font-bold py-8">Featured Blogs</h2>
+            <h2 className="text-2xl md:text-4xl text-center font-bold py-8">Wishlist Blogs</h2>
             <table className="table">
                 {/* head */}
                 <thead className="bg-blue-100 ">

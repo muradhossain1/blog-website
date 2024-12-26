@@ -1,6 +1,6 @@
 
 import toast from "react-hot-toast";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import useAxiosSecure from "../hooks/useAxiosSecure";
 import { useEffect, useState } from "react";
 
@@ -8,6 +8,7 @@ import { useEffect, useState } from "react";
 
 const UpdateBlog = () => {
     const { id } = useParams();
+    const navigate = useNavigate();
     const axiosSecure = useAxiosSecure();
     const [blog, setBlog] = useState([])
 
@@ -17,7 +18,6 @@ const UpdateBlog = () => {
     }, [id])
     const fetchBlogData = async () => {
         const { data } = await axiosSecure.get(`/blog/${id}`);
-        console.log(data)
         setBlog(data)
     }
     const { _id, title, photo, category, shortDescript, longDescript, } = blog;
@@ -38,11 +38,10 @@ const UpdateBlog = () => {
             shortDescript,
             longDescript,
         };
-
-        console.log(updateData)
         try {
             await axiosSecure.patch(`/updates/${_id}`, updateData)
             toast.success('Update successfully!!')
+            navigate(`/details/${_id}`)
         }
         catch (err) {
             toast.error(err.message)

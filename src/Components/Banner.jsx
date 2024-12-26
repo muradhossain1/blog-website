@@ -43,15 +43,15 @@ const Banner = () => {
                     <div
                         className='w-full bg-center bg-cover h-[28rem]'
                         style={{
-                            backgroundImage: `url('https://i.ibb.co.com/VYyWPRV/sports.jpg')`,
+                            backgroundImage: `url('https://i.ibb.co.com/X81VhBX/fashion.jpg')`,
                         }}
                     >
                         <div className='flex items-center justify-center w-full h-full bg-gray-700/60 '>
                             <div className=''>
                                 <h1 className='text-xl font-semibold text-gray-200 lg:text-4xl'>
-                                    Sports Blogs
+                                    Fashion Blogs
                                 </h1>
-                                <p className="text-gray-300 mt-2">A website or online journal that features writing about sports-related topics.</p>
+                                <p className="text-gray-300 mt-2">A website or online journal that features writing about fashoin-related topics.</p>
                             </div>
                         </div>
                     </div>

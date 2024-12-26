@@ -2,12 +2,14 @@
 import useAuth from "../hooks/useAuth";
 import toast from "react-hot-toast";
 import useAxiosSecure from "../hooks/useAxiosSecure";
+import { useNavigate } from "react-router-dom";
 
 
 const AddBlogs = () => {
 
     const { user } = useAuth();
     const axiosSecure = useAxiosSecure();
+    const navigate = useNavigate()
 
     const handleSubmit = async e => {
         e.preventDefault()
@@ -32,6 +34,7 @@ const AddBlogs = () => {
         
             form.reset();
             toast.success('Blog added successfully!!');
+            navigate('/all-blogs')
           }
           catch(err){
             toast.error(err.message)

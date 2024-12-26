@@ -1,6 +1,16 @@
+import toast from "react-hot-toast";
 
 
 const NewLetter = () => {
+
+    const handleSubscribe = (e) => {
+        e.preventDefault();
+        const form = e.target
+        const email = form.email.value;
+        console.log(email)
+        toast.success('Thank you for subscribing to our newsletter')
+        form.reset();
+    }
     return (
         <div className="hero bg-base-300 rounded-lg  mt-12">
             <div className="flex flex-col lg:flex-row">
@@ -15,13 +25,15 @@ const NewLetter = () => {
                         <p className="py-4 text-lg font-medium text-gray-500">
                             Keep up our latest news and events. Subscribe our Newsletter.
                         </p>
-                        <div className=" flex items-center justify-center ">
+                        <form onSubmit={handleSubscribe} className=" flex items-center justify-center ">
                             <div className="join">
                                 <input 
+                                type="email"
+                                name="email"
                                 className="input input-bordered join-item" placeholder="Enter Your Email" />
-                                <button className="btn btn-warning join-item rounded-r-lg">Subscribe</button>
+                                <button  className="btn btn-warning join-item rounded-r-lg">Subscribe</button>
                             </div>
-                        </div>
+                        </form>
                     </div>
                 </div>
             </div>

@@ -21,7 +21,6 @@ const BlogCrad = ({ blog }) => {
         } catch (err) {
             toast.error(err.response.data)
         }
-        console.log(wishlistData)
     }
     return (
         <div className="card bg-base-100 shadow-xl p-4 border">

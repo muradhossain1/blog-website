@@ -13,7 +13,6 @@ const FeaturedBlogs = () => {
         }
         fetchFeatured()
     }, [])
-    console.log(blogs)
     return (
         <div className="overflow-x-auto md:px-28">
             <h2 className="text-2xl md:text-4xl text-center font-bold py-8">Featured Blogs</h2>

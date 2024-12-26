@@ -33,7 +33,6 @@ const Register = () => {
         if (!/[!@#$%^&*(),.?":{}|<>]/.test(password)) {
             return setError('Password must contain at least one special character ')
         }
-
         createUser(email, password)
             .then(() => {
                 toast.success('Successful your google account Register')
