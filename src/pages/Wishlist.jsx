@@ -35,8 +35,8 @@ const Wishlist = () => {
 
     }
     return (
-        <div className="overflow-x-auto md:px-28">
-            <h2 className="text-2xl md:text-4xl text-center font-bold py-8">Wishlist Blogs</h2>
+        <div className="overflow-x-auto ">
+            <h2 className="text-2xl md:text-4xl text-center font-bold py-8">My Wishlist Blogs</h2>
             <table className="table">
                 {/* head */}
                 <thead className="bg-blue-100 ">
@@ -50,7 +50,7 @@ const Wishlist = () => {
                         <th>Action</th>
                     </tr>
                 </thead>
-                <tbody className="bg-gray-100 text-base font-semibold">
+                <tbody className=" text-base font-semibold">
                     {/* row 1 */}
                     {
                         blogs?.map((blog, index) => <tr key={blog._id}>
@@ -58,8 +58,8 @@ const Wishlist = () => {
                             <td><img className="w-20 h-10 rounded-xl" src={blog.photo} alt="" /></td>
                             <td>{blog.title}</td>
                             <td>{blog.category}</td>
-                            <td>{blog.shortDescript?.substring(0, 20)}...</td>
-                            <td>{blog.longDescript?.substring(0, 20)}...</td>
+                            <td>{blog.shortDescript?.substring(0, 15)}...</td>
+                            <td>{blog.longDescript?.substring(0, 15)}...</td>
                             <td className="flex gap-3">
                             <Link className="btn btn-warning" to={`/details/${blog.blog_Id}`}>Details</Link>
                                 <button onClick={() => handleRemove(blog._id)} className="btn btn-error">Remove</button>

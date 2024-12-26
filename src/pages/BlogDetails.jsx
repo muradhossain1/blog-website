@@ -28,8 +28,7 @@ const BlogDetails = () => {
     useEffect(() => {
         fetchBlogData()
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [comments])
-    console.log()
+    }, [id])
 
     const { _id, title, photo, category, shortDescript, longDescript, } = blog;
 
