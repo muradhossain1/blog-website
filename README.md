@@ -1,8 +1,28 @@
-# React + Vite
+## Project-Name : Blog Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Purpose
+The Blog Website Development project aims to create a modern, user-friendly, and responsive blog platform. It provides users with the ability to view, comment on, and interact with blog posts, while offering admins the ability to manage content. Built using React for the front-end and Firebase for back-end services, the site delivers real-time features like authentication, dynamic content management, and real-time commenting.
 
-Currently, two official plugins are available:
+## Blog Website Live Site: "https://my-assignment-10-4d054.web.app"
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Key Features
+- User Authentication : Users can sign up, log in, and manage their profiles using Firebase Authentication.
+- Dynamic Blog Posts : Real-time creation, update, and deletion of blog posts, powered by Firebase Firestore.
+- Real-Time Comments : Users can comment on posts, with real-time updates using Firebase.
+- Responsive Design : Mobile-friendly, adaptive design that works across all screen sizes.
+- Search Functionality : Users can search for blog posts based on keywords or tags.
+- Admin Panel : Admin users can manage blog content, including adding, editing, and deleting posts.
+
+## NPM Packages Used
+- react.
+- react-dom.
+- axios.
+- firebase.
+- swiper.
+- lottie-react.
+- react-router-dom.
+- react-scripts.
+- react-icons.
+- react-toastify.
+- tailwindcss.
+- daisyui.
