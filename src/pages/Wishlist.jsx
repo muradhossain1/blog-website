@@ -10,17 +10,17 @@ const Wishlist = () => {
     const { user } = useAuth();
     const [blogs, setBlogs] = useState([]);
     const axiosSecure = useAxiosSecure();
-  
+
     const fetchAllBlogs = async (user) => {
         const { data } = await axiosSecure.get(`/wishlist?email=${user?.email}`);
         setBlogs(data)
     }
     useEffect(() => {
         fetchAllBlogs(user)
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [user])
-    
-    
+
+
     const handleRemove = async (id) => {
         try {
             const { data } = await axiosSecure.delete(`/wishlist/${id}`);
@@ -61,7 +61,7 @@ const Wishlist = () => {
                             <td>{blog.shortDescript?.substring(0, 20)}...</td>
                             <td>{blog.longDescript?.substring(0, 20)}...</td>
                             <td className="flex gap-3">
-                                <button className="btn btn-warning"><Link to={`/details/${blog.blog_id}`}>Details</Link></button>
+                            <Link className="btn btn-warning" to={`/details/${blog.blog_Id}`}>Details</Link>
                                 <button onClick={() => handleRemove(blog._id)} className="btn btn-error">Remove</button>
                             </td>
                         </tr>)
