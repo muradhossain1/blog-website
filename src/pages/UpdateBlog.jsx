@@ -1,13 +1,27 @@
-import axios from "axios";
+
 import toast from "react-hot-toast";
-import { useLoaderData } from "react-router-dom";
+import { useParams } from "react-router-dom";
+import useAxiosSecure from "../hooks/useAxiosSecure";
+import { useEffect, useState } from "react";
+
 
 
 const UpdateBlog = () => {
+    const { id } = useParams();
+    const axiosSecure = useAxiosSecure();
+    const [blog, setBlog] = useState([])
 
-    const blog = useLoaderData();
+    useEffect(() => {
+        fetchBlogData()
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [id])
+    const fetchBlogData = async () => {
+        const { data } = await axiosSecure.get(`/blog/${id}`);
+        console.log(data)
+        setBlog(data)
+    }
     const { _id, title, photo, category, shortDescript, longDescript, } = blog;
-    
+
     const handleSubmit = async e => {
         e.preventDefault()
         const form = e.target;
@@ -27,12 +41,12 @@ const UpdateBlog = () => {
 
         console.log(updateData)
         try {
-            await axios.patch(`${import.meta.env.VITE_API_URL}/updates/${_id}`, updateData)
+            await axiosSecure.patch(`/updates/${_id}`, updateData)
             toast.success('Update successfully!!')
-          }
-          catch (err) {
+        }
+        catch (err) {
             toast.error(err.message)
-          }
+        }
     }
 
     return (

@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import useAuth from "../hooks/useAuth";
 import toast from "react-hot-toast";
+import useAxiosSecure from "../hooks/useAxiosSecure";
 
 
 const BlogDetails = () => {
@@ -10,15 +11,15 @@ const BlogDetails = () => {
     const { user } = useAuth();
     const [blog, setBlog] = useState({})
     const [owner, setWoner] = useState(false)
+    const axiosSecure = useAxiosSecure();
 
     useEffect(() => {
         fetchBlogData()
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [id])
     const fetchBlogData = async () => {
-        const { data } = await axios.get(`${import.meta.env.VITE_API_URL}/blog/${id}`);
+        const { data } = await axiosSecure.get(`/blog/${id}`);
         setBlog(data)
-        // 0. Cheak blog Permission validation
         if (user?.email === data?.email) {
             return setWoner(true)
         }

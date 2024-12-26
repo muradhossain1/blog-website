@@ -1,20 +1,39 @@
 import { useEffect, useState } from "react";
 import useAuth from "../hooks/useAuth";
-import axios from "axios";
+import { Link } from "react-router-dom";
+import useAxiosSecure from "../hooks/useAxiosSecure";
+
 
 
 const Wishlist = () => {
     const { user } = useAuth();
     const [blogs, setBlogs] = useState([]);
-    useEffect(() => {
-        fetchAllBids()
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [user?.email])
-
-    const fetchAllBids = async () => {
-        const { data } = await axios.get(`${import.meta.env.VITE_API_URL}/wishlist?email=${user?.email}`);
+    const axiosSecure = useAxiosSecure();
+  
+    const fetchAllBlogs = async (user) => {
+        const { data } = await axiosSecure.get(`/wishlist?email=${user?.email}`);
+        console.log(data)
         setBlogs(data)
     }
+    useEffect(() => {
+        fetchAllBlogs(user)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [user])
+    
+    
+    const handleRemove = async (id) => {
+        try {
+            const { data } = await axiosSecure.delete(`/wishlist/${id}`);
+            console.log(data)
+            fetchAllBlogs(user)
+            // setBlogs(data)
+        }
+        catch (err) {
+            console.log(err.message)
+        }
+
+    }
+
     console.log(blogs.length)
     return (
         <div className="overflow-x-auto md:px-28">
@@ -35,13 +54,17 @@ const Wishlist = () => {
                 <tbody className="bg-gray-100 text-base font-semibold">
                     {/* row 1 */}
                     {
-                        blogs.map((blog, index) => <tr key={blog._id}>
+                        blogs?.map((blog, index) => <tr key={blog._id}>
                             <th>{index + 1}</th>
                             <td><img className="w-20 h-10 rounded-xl" src={blog.photo} alt="" /></td>
                             <td>{blog.title}</td>
                             <td>{blog.category}</td>
                             <td>{blog.shortDescript?.substring(0, 20)}...</td>
                             <td>{blog.longDescript?.substring(0, 20)}...</td>
+                            <td className="flex gap-3">
+                                <button className="btn btn-warning"><Link to={`/details/${blog.blog_id}`}>Details</Link></button>
+                                <button onClick={() => handleRemove(blog._id)} className="btn btn-error">Remove</button>
+                            </td>
                         </tr>)
                     }
 
