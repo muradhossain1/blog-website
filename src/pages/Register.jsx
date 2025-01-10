@@ -84,10 +84,10 @@ const Register = () => {
                             </button>
                         </div>
                         <div className="form-control mt-4">
-                            <button className="w-full px-6 py-3 text-base text-white font-medium my-2 bg-gray-800 rounded-lg hover:bg-gray-700">Register</button>
+                            <button className="w-full px-6 py-3 text-base text-white font-medium my-2 bg-purple-600 rounded-lg hover:bg-purple-700">Register</button>
                         </div>
                         {error && <p className="text-red-500 text-sm">{error}</p>}
-                        <p className="text-lg font-semibold mt-2">Already have an account? please <Link to='/login' className="link text-blue-800">Login</Link></p>
+                        <p className="text-lg font-semibold mt-2">Already have an account? please <Link to='/login' className="link text-purple-800">Login</Link></p>
                     </form>
                 </div>
             </div>

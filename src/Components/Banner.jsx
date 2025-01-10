@@ -6,7 +6,7 @@ import 'swiper/css/navigation'
 
 const Banner = () => {
     return (
-        <div className="carousel border p-6 rounded-xl w-full mt-6">
+        <div className="carousel w-full">
             <Swiper
                 spaceBetween={30}
                 centeredSlides={true}
@@ -24,26 +24,9 @@ const Banner = () => {
             >
                 <SwiperSlide id="slide1" className="carousel-item relative w-full">
                     <div
-                        className='w-full bg-center bg-cover h-[28rem]'
+                        className='w-full bg-center bg-cover h-[26rem]'
                         style={{
-                            backgroundImage: `url('https://i.ibb.co.com/zfH7ZSp/travel.jpg')`,
-                        }}
-                    >
-                        <div className='flex items-center justify-center w-full h-full bg-gray-700/60 '>
-                            <div className=''>
-                                <h1 className='text-xl font-semibold text-gray-200 lg:text-4xl'>
-                                    Travel Blogs
-                                </h1>
-                                <p className="text-gray-300 mt-2">A travel blog thats specifically dedicated to travel in some capacity.</p>
-                            </div>
-                        </div>
-                    </div>
-                </SwiperSlide>
-                <SwiperSlide id="slide1" className="carousel-item relative w-full">
-                    <div
-                        className='w-full bg-center bg-cover h-[28rem]'
-                        style={{
-                            backgroundImage: `url('https://i.ibb.co.com/X81VhBX/fashion.jpg')`,
+                            backgroundImage: `url('https://i.ibb.co.com/gv3ZtcK/fashoin.jpg')`,
                         }}
                     >
                         <div className='flex items-center justify-center w-full h-full bg-gray-700/60 '>
@@ -58,9 +41,26 @@ const Banner = () => {
                 </SwiperSlide>
                 <SwiperSlide id="slide1" className="carousel-item relative w-full">
                     <div
-                        className='w-full bg-center bg-cover h-[28rem]'
+                        className='w-full bg-center bg-cover h-[26rem]'
                         style={{
-                            backgroundImage: `url('https://i.ibb.co.com/WPc4qDm/food.jpg')`,
+                            backgroundImage: `url('https://i.ibb.co.com/mS0Q1pQ/travel.jpg')`,
+                        }}
+                    >
+                        <div className='flex items-center justify-center w-full h-full bg-gray-700/60 '>
+                            <div className=''>
+                                <h1 className='text-xl font-semibold text-gray-200 lg:text-4xl'>
+                                    Travel Blogs
+                                </h1>
+                                <p className="text-gray-300 mt-2">A travel blog thats specifically dedicated to travel in some capacity.</p>
+                            </div>
+                        </div>
+                    </div>
+                </SwiperSlide>
+                <SwiperSlide id="slide1" className="carousel-item relative w-full">
+                    <div
+                        className='w-full bg-center bg-cover h-[26rem]'
+                        style={{
+                            backgroundImage: `url('https://i.ibb.co.com/DwS91mt/food.png')`,
                         }}
                     >
                         <div className='flex items-center justify-center w-full h-full bg-gray-700/60 '>

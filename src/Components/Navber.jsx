@@ -1,6 +1,6 @@
 import { Link, useNavigate } from "react-router-dom";
 import useAuth from "../hooks/useAuth";
-import logoBlog from '../assets/logo.png'
+import logoBlog from '../../public/fabicon.png'
 
 
 const Navber = () => {
@@ -22,13 +22,13 @@ const Navber = () => {
         <li className="font-semibold"><Link to='/my-wishlist'>Wishlist </Link></li>
     </>
     return (
-        <div className="navbar lg:px-20 mt-4 bg-green-50">
+        <div className="navbar fixed top-0 z-10 md:px-10 lg:px-20 bg-green-50">
             <div className="navbar-start">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
-                            className="h-5 w-5"
+                            className="h-8 w-8"
                             fill="none"
                             viewBox="0 0 24 24"
                             stroke="currentColor">
@@ -46,8 +46,8 @@ const Navber = () => {
                     </ul>
                 </div>
                 <div className="flex items-center gap-3">
-                    <img className="w-8 hidden md:block" src={logoBlog} alt="" />
-                    <Link to='/' className="text-lg md:text-2xl font-bold text-purple-600 ">Blog Website</Link>
+                    <img className="w-8 hidden lg:block" src={logoBlog} alt="" />
+                    <Link to='/' className="text-lg md:text-2xl font-bold text-gray-800 ">Blog Website</Link>
                 </div>
             </div>
             <div className="navbar-center hidden lg:flex">

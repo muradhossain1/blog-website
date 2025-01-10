@@ -10,7 +10,7 @@ const ErrorPage = () => {
                     <Lottie animationData={lottieError}></Lottie>
                 </div>
             <h2 className="text-4xl font-bold">Data Not Found This Page</h2>
-            <button className="btn btn-primary mt-6"><Link to='/'>Go to Home</Link></button>
+            <button className="btn bg-purple-600 hover:bg-purple-700 text-white mt-6"><Link to='/'>Go to Home</Link></button>
         </div>
     );
 };

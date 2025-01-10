@@ -41,7 +41,7 @@ const AddBlogs = () => {
           }
     }
     return (
-        <div className='md:flex justify-center items-center min-h-[calc(100vh-306px)] mt-4'>
+        <div className='md:flex justify-center items-center min-h-[calc(100vh-306px)] mt-8'>
             <section className=' p-2 md:p-6 mx-auto border bg-white rounded-md shadow-md '>
                 <h2 className='text-xl font-bold text-gray-700 capitalize '>
                     Create a New Blog Post
@@ -116,7 +116,7 @@ const AddBlogs = () => {
                         ></textarea>
                     </div>
                     <div className='flex justify-end mt-6'>
-                        <button className='disabled:cursor-not-allowed px-8 py-2.5 leading-5 text-white transition-colors duration-300 transhtmlForm bg-gray-700 rounded-md hover:bg-gray-600 focus:outline-none focus:bg-gray-600'>
+                        <button className='disabled:cursor-not-allowed px-8 py-2.5 leading-5 text-white transition-colors duration-300 transhtmlForm bg-purple-600 rounded-md hover:bg-purple-700 focus:outline-none focus:bg-gray-600'>
                             Submit
                         </button>
                     </div>

@@ -105,10 +105,10 @@ const Login = () => {
                             </label>
                         </div>
                         <div className="form-control mt-2">
-                            <button className="w-full px-6 py-3 text-base text-white font-medium my-2 bg-gray-800 rounded-lg hover:bg-gray-700">Login</button>
+                            <button className="w-full px-6 py-3 text-base text-white font-medium my-2 bg-purple-600 rounded-lg hover:bg-purple-700">Login</button>
                         </div>
                         {error && <p className="text-red-500 text-sm">{error}</p>}
-                        <p className="text-lg font-semibold mt-2">New to this website? please <Link to='/register' className="link text-blue-800">Register</Link></p>
+                        <p className="text-lg font-semibold mt-2">New to this website? please <Link to='/register' className="link text-purple-800">Register</Link></p>
                     </form>
                 </div>
             </div>

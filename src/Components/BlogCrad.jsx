@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import useAuth from "../hooks/useAuth";
 import axios from "axios";
 import toast from "react-hot-toast";
@@ -8,11 +8,15 @@ import toast from "react-hot-toast";
 
 const BlogCrad = ({ blog }) => {
     const { user } = useAuth();
+    const navigate = useNavigate();
     const { _id, photo, title, category, shortDescript, longDescript } = blog;
 
     const handleWishlist = async () => {
+        if(!user) {
+            return navigate('/login')
+        }
 
-        const wishlistData = { blog_Id: _id, photo, title, category, shortDescript,longDescript, email: user?.email, user_photo: user?.photoURL };
+        const wishlistData = { blog_Id: _id, photo, title, category, shortDescript, longDescript, email: user?.email, user_photo: user?.photoURL };
 
         try {
             const { data } = await axios.post(`${import.meta.env.VITE_API_URL}/wishlists`, wishlistData);
@@ -32,17 +36,20 @@ const BlogCrad = ({ blog }) => {
             </figure>
             <div className=" space-y-4 mt-4 ">
                 <h2 className="card-title font-bold">{title}</h2>
-                <p className="font-semibold text-lg">Category : <span className="text-base text-purple-600">{category}</span></p>
+                <div className="flex items-center gap-2">
+                    <p className="font-semibold text-lg">Category : </p>
+                    <p className="px-4 mt-1 font-medium border border-purple-600 text-center text-base rounded-full  text-purple-600 bg-purple-100/60">{category}</p>
+                </div>
                 <div className="">
                     <p className="font-semibold text-lg">Description : </p>
                     <p className="text-base text-gray-500">{shortDescript}</p>
                 </div>
 
                 <div className="card-actions grid grid-cols-2">
-                    <button className="w-full px-4 py-2 text-base font-medium text-white bg-gray-800 rounded-md hover:bg-gray-700">
+                    <button className="w-full px-4 py-2 text-base font-medium text-white bg-purple-600 rounded-md hover:bg-purple-700">
                         <Link to={`/details/${_id}`}>Details</Link>
                     </button>
-                    <button onClick={handleWishlist} className="w-full px-4 py-2 text-base font-medium text-white bg-gray-800 rounded-md hover:bg-gray-700">
+                    <button onClick={handleWishlist} className="w-full px-4 py-2 text-base font-medium text-white bg-purple-600 rounded-md hover:bg-purple-700">
                         <Link to={`/my-wishlist`}>Wishlist</Link>
                     </button>
                 </div>

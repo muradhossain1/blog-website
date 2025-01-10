@@ -17,7 +17,7 @@ const AllBlogs = () => {
     }, [filter, search])
     return (
         <div>
-            <div className='flex flex-col md:flex-row justify-center items-center gap-5 mt-4 '>
+            <div className='flex flex-col md:flex-row justify-center items-center gap-5 my-8'>
                 <div>
                     <select
                         name='category'
@@ -51,7 +51,7 @@ const AllBlogs = () => {
                     </div>
                 </form>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                 {
                     blogs.map(blog => <BlogCrad key={blog._id} blog={blog}></BlogCrad>)
                 }

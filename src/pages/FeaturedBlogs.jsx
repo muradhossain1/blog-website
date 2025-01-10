@@ -15,7 +15,7 @@ const FeaturedBlogs = () => {
     }, [])
     return (
         <div className="overflow-x-auto ">
-            <h2 className="text-2xl md:text-4xl text-center font-bold py-8">Featured Blogs top 10 posts</h2>
+            <h2 className="text-2xl md:text-4xl text-center font-bold my-8">Featured Blogs top 10 posts</h2>
             <table className="table">
                 {/* head */}
                 <thead className="bg-blue-100 ">

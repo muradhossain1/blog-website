@@ -64,7 +64,7 @@ const BlogDetails = () => {
                 <div className="flex items-center justify-between">
                     <h2 className="card-title font-bold">{title}</h2>
                     <div className="flex justify-end">
-                        <p className="px-6 text-center font-medium rounded-full  py-1 text-purple-600 bg-purple-100/60">{category}</p>
+                        <p className="px-6 border border-purple-600 text-center font-medium rounded-full  py-1 text-purple-600 bg-purple-100/60">{category}</p>
                     </div>
                 </div>
                 <div className="">
@@ -84,7 +84,7 @@ const BlogDetails = () => {
                                     <p className="mt-2 text-base text-gray-500">Can not comment on own blog</p>
                                 </div>
                                 <div className="flex justify-end">
-                                    <button className='disabled:cursor-not-allowed px-8 py-2.5 leading-5 text-white mt-2 transition-colors duration-300 transhtmlForm bg-gray-700 rounded-md hover:bg-gray-600 focus:outline-none focus:bg-gray-600'>
+                                    <button className='disabled:cursor-not-allowed px-8 py-2.5 leading-5 text-white mt-2 transition-colors duration-300 transhtmlForm bg-purple-600 rounded-md hover:bg-purple-700 focus:outline-none focus:bg-purple-700'>
                                         <Link to={`/update/${_id}`}>Update</Link>
                                     </button>
                                 </div>
@@ -104,7 +104,7 @@ const BlogDetails = () => {
                                         ></textarea>
                                     </div>
                                     <div className="flex justify-end">
-                                        <button className='disabled:cursor-not-allowed px-8 py-2.5 leading-5 text-white mt-4 transition-colors duration-300 transhtmlForm bg-gray-700 rounded-md hover:bg-gray-600 focus:outline-none focus:bg-gray-600'>
+                                        <button className='disabled:cursor-not-allowed px-8 py-2.5 leading-5 text-white mt-4 transition-colors duration-300 transhtmlForm bg-purple-600 rounded-md hover:bg-purple-700 focus:outline-none focus:bg-purple-700'>
                                             Comment
                                         </button>
                                     </div>

@@ -61,8 +61,8 @@ const Wishlist = () => {
                             <td>{blog.shortDescript?.substring(0, 15)}...</td>
                             <td>{blog.longDescript?.substring(0, 15)}...</td>
                             <td className="flex gap-3">
-                            <Link className="btn btn-warning" to={`/details/${blog.blog_Id}`}>Details</Link>
-                                <button onClick={() => handleRemove(blog._id)} className="btn btn-error">Remove</button>
+                            <Link className="px-4 py-2 text-base text-white font-medium my-2 bg-purple-600 rounded-lg hover:bg-purple-700" to={`/details/${blog.blog_Id}`}>Details</Link>
+                                <button onClick={() => handleRemove(blog._id)} className="px-4 py-2 text-base font-medium my-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg ">Remove</button>
                             </td>
                         </tr>)
                     }

@@ -3,19 +3,19 @@ import { FaCheckCircle } from "react-icons/fa";
 
 const TrendingNow = () => {
     return (
-        <div className="mt-12">
-            <h2 className="text-2xl md:text-4xl font-bold ">Tranding Now </h2>
-            <div className="flex flex-col md:flex-row gap-6">
-                <div className="hero border rounded-lg p-4 mt-6">
-                    <div className="flex flex-col gap-4 lg:flex-row">
+        <div className="">
+            <h2 className="text-2xl md:text-4xl my-8 text-center font-bold ">Tranding Now </h2>
+            <div className="flex flex-col lg:flex-row gap-6">
+                <div className="hero border rounded-lg p-4">
+                    <div className="flex flex-col md:flex-row   gap-4 ">
                         <div className="md:w-1/2 ">
                             <img
                                 src="https://i.ibb.co.com/vvD4XFv/sports.jpg"
-                                className="h-full w-full md:h-[350px] rounded-lg shadow-2xl" />
+                                className="h-full w-full lg:h-[350px] rounded-lg shadow-2xl" />
                         </div>
                         <div className="md:w-1/2 py-6  rounded-lg">
                             <div className="flex justify-end">
-                                <p className="px-6 text-center font-medium rounded-full  py-1 text-purple-600 bg-purple-100/60">Sports</p>
+                                <p className="px-6 text-center font-medium rounded-full  py-1 border border-purple-600 text-purple-600 bg-purple-100/60">Sports</p>
                             </div>
                             <h1 className="text-xl font-bold mt-4">Playing football with your feet is one thing.</h1>
                             <p className="py-2 text-base font-medium text-gray-500">
@@ -34,8 +34,8 @@ const TrendingNow = () => {
                         </div>
                     </div>
                 </div>
-                <div className="hero border rounded-lg p-4 mt-6">
-                    <div className="flex flex-col gap-4 lg:flex-row">
+                <div className="hero border rounded-lg p-4">
+                    <div className="flex flex-col md:flex-row gap-4 ">
                         <div className="md:w-1/2 ">
                             <img
                                 src="https://i.ibb.co.com/SKwLftz/fashoin.jpg"
@@ -43,7 +43,7 @@ const TrendingNow = () => {
                         </div>
                         <div className="md:w-1/2 py-6  rounded-lg">
                             <div className="flex justify-end">
-                                <p className="px-6 text-center font-medium rounded-full  py-1 text-purple-600 bg-purple-100/60">Fashions</p>
+                                <p className="px-6 text-center font-medium rounded-full  py-1 border border-purple-600 text-purple-600 bg-purple-100/60">Fashions</p>
                             </div>
                             <h1 className="text-xl font-bold mt-4">Fashion is a constantly the expression of clothing.</h1>
                             <p className="py-2 text-base font-medium text-gray-500">
