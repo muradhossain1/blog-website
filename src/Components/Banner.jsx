@@ -24,7 +24,7 @@ const Banner = () => {
             >
                 <SwiperSlide id="slide1" className="carousel-item relative w-full">
                     <div
-                        className='w-full bg-center bg-cover h-[26rem]'
+                        className='w-full bg-center bg-cover h-[29rem]'
                         style={{
                             backgroundImage: `url('https://i.ibb.co.com/gv3ZtcK/fashoin.jpg')`,
                         }}
@@ -41,7 +41,7 @@ const Banner = () => {
                 </SwiperSlide>
                 <SwiperSlide id="slide1" className="carousel-item relative w-full">
                     <div
-                        className='w-full bg-center bg-cover h-[26rem]'
+                        className='w-full bg-center bg-cover h-[29rem]'
                         style={{
                             backgroundImage: `url('https://i.ibb.co.com/mS0Q1pQ/travel.jpg')`,
                         }}
@@ -58,9 +58,9 @@ const Banner = () => {
                 </SwiperSlide>
                 <SwiperSlide id="slide1" className="carousel-item relative w-full">
                     <div
-                        className='w-full bg-center bg-cover h-[26rem]'
+                        className='w-full bg-center bg-cover h-[29rem]'
                         style={{
-                            backgroundImage: `url('https://i.ibb.co.com/DwS91mt/food.png')`,
+                            backgroundImage: `url('https://i.ibb.co.com/10r4YV3/food.png')`,
                         }}
                     >
                         <div className='flex items-center justify-center w-full h-full bg-gray-700/60 '>
