@@ -12,7 +12,7 @@ const NewLetter = () => {
         form.reset();
     }
     return (
-        <div className="hero bg-green-50 rounded-lg  mt-16">
+        <div className="hero bg-green-50 rounded-lg  mt-16 shadow-lg">
             <div className="flex flex-col lg:flex-row">
                 <div className="lg:w-1/2 p-4 md:p-8 ">
                     <img
