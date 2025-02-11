@@ -9,7 +9,7 @@ const Footer = () => {
         <div className="mt-8 bg-neutral ">
             <div className="flex items-center lg:mr-6 justify-center pt-6 gap-5">
                 <img className="w-10 " src={logoBlog} alt="" />
-                <Link to='/' className="text-xl text-white md:text-4xl font-extrabold ">Blog Website</Link>
+                <Link to='/' className="text-xl text-white md:text-3xl font-extrabold ">Blog Website</Link>
             </div>
             
             <footer className="grid grid-cols-2 md:grid-cols-4 gap-8 md:justify-around text-neutral-content mt-3 p-4 md:px-10 lg:px-20 mb-6 ">
