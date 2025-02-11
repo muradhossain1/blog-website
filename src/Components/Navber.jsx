@@ -18,8 +18,8 @@ const Navber = () => {
         <li className="font-semibold"><Link to='/'>Home</Link></li>
         <li className="font-semibold"><Link to='/all-blogs'>All Blogs</Link></li>
         <li className="font-semibold"><Link to='/add-blogs'>Add Blogs</Link></li>
-        <li className="font-semibold"><Link to='/featured'>Featured</Link></li>
-        <li className="font-semibold"><Link to='/my-wishlist'>Wishlist </Link></li>
+        {user && <li className="font-semibold"><Link to='/featured'>Featured</Link></li>}
+        {user && <li className="font-semibold"><Link to='/my-wishlist'>Wishlist </Link></li>}
     </>
     return (
         <div className="navbar fixed top-0 z-10 md:px-10 lg:px-20 bg-green-50">
