@@ -1,9 +1,11 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import BlogCrad from "../Components/BlogCrad";
+import useAuth from "../hooks/useAuth";
 
 
 const AllBlogs = () => {
+    const { theme } = useAuth();
     const [blogs, setBlogs] = useState([])
     const [filter, setFilter] = useState('');
     const [search, setSearch] = useState('');
@@ -24,7 +26,7 @@ const AllBlogs = () => {
                         id='category'
                         onChange={(e) => setFilter(e.target.value)}
                         value={filter}
-                        className='border px-4 py-3 rounded-lg'
+                        className={`border px-4 py-3 rounded-lg ${theme === 'light' ? '' : 'bg-gray-900'}`}
                     >
                         <option value='' >Filter By Category</option>
                         <option value='Food Blog'>Food Blog</option>
@@ -36,7 +38,7 @@ const AllBlogs = () => {
                 <form>
                     <div className='flex p-1 overflow-hidden border rounded-lg    focus-within:ring focus-within:ring-opacity-40 focus-within:border-blue-400 focus-within:ring-blue-300'>
                         <input
-                            className='px-6 py-2 text-gray-700 placeholder-gray-500 bg-white outline-none focus:placeholder-transparent'
+                            className={`px-6 py-2 text-gray-700 placeholder-gray-500 outline-none focus:placeholder-transparent  ${theme === 'light' ? '' : 'bg-gray-900 placeholder-gray-400'}`}
                             type='text'
                             name='search'
                             onChange={e => setSearch(e.target.value)}

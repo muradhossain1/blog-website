@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 
 const AddBlogs = () => {
 
-    const { user } = useAuth();
+    const { user, theme } = useAuth();
     const axiosSecure = useAxiosSecure();
     const navigate = useNavigate()
 
@@ -42,8 +42,8 @@ const AddBlogs = () => {
     }
     return (
         <div className='md:flex justify-center items-center min-h-[calc(100vh-306px)] mt-8'>
-            <section className=' p-2 md:p-6 mx-auto border bg-white rounded-md shadow-md '>
-                <h2 className='text-xl font-bold text-gray-700 capitalize '>
+            <section className=' p-2 md:p-6 mx-auto border rounded-md shadow-md '>
+                <h2 className={`text-xl font-bold text-gray-700 capitalize ${theme === 'light' ? '' : 'text-white'}`}>
                     Create a New Blog Post
                 </h2>
 
@@ -51,7 +51,7 @@ const AddBlogs = () => {
                     <div className='grid grid-cols-1 gap-6 mt-4 sm:grid-cols-2'>
                         {/* blog title */}
                         <div>
-                            <label className='text-gray-700 text-base font-medium ' htmlFor='blog-title'>
+                            <label className={`text-gray-700 text-base font-medium ${theme === 'light' ? '' : 'text-white'}`} htmlFor='blog-title'>
                                 Blog Title
                             </label>
                             <input
@@ -59,18 +59,18 @@ const AddBlogs = () => {
                                 name='title'
                                 placeholder="Title"
                                 type='text'
-                                className='block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md  focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40  focus:outline-none focus:ring'
+                                className={`block w-full px-4 py-2 mt-2 text-gray-700 border border-gray-200 rounded-md  focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40  focus:outline-none focus:ring ${theme === 'light' ? '' : 'bg-gray-900'}`}
                             />
                         </div>
                         {/* blog category */}
                         <div className='flex flex-col gap-2 '>
-                            <label className='text-gray-700 text-base font-medium ' htmlFor='category'>
+                            <label className={`text-gray-700 text-base font-medium ${theme === 'light' ? '' : 'text-white'}`} htmlFor='category'>
                                 Category
                             </label>
                             <select
                                 name='category'
                                 id='category'
-                                className='border p-2 rounded-md'
+                                className={`border p-2 rounded-md ${theme === 'light' ? '' : 'bg-gray-900'}`}
                                 defaultValue="Pick your Category"
                             >
                                 <option disabled>Pick your Category</option>
@@ -82,7 +82,7 @@ const AddBlogs = () => {
                     </div>
                     {/* blog image */}
                     <div className='flex flex-col mt-4'>
-                        <label className='text-gray-700 text-base font-medium' htmlFor='photo'>
+                        <label className={`text-gray-700 text-base font-medium ${theme === 'light' ? '' : 'text-white'}`} htmlFor='photo'>
                             Photo URL
                         </label>
                         <input
@@ -90,33 +90,33 @@ const AddBlogs = () => {
                             name='photo'
                             type='text'
                             placeholder="Photo Url"
-                            className='block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md  focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40  focus:outline-none focus:ring'
+                            className={`block w-full px-4 py-2 mt-2 text-gray-700 border border-gray-200 rounded-md  focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40  focus:outline-none focus:ring ${theme === 'light' ? '' : 'bg-gray-900'}`}
                         />
                     </div>
                     {/* blog sort text */}
                     <div className='flex flex-col mt-4'>
-                        <label className='text-gray-700 text-base font-medium  ' htmlFor='description'>
+                        <label className={`text-gray-700 text-base font-medium ${theme === 'light' ? '' : 'text-white'}`} htmlFor='description'>
                             Short Description
                         </label>
                         <textarea
                             name='shortDescript'
                             id='description'
-                            className='block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md  focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40  focus:outline-none focus:ring'
+                            className={`block w-full px-4 py-2 mt-2 text-gray-700 border border-gray-200 rounded-md  focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40  focus:outline-none focus:ring ${theme === 'light' ? '' : 'bg-gray-900'}`}
                         ></textarea>
                     </div>
                     {/* blog long text */}
                     <div className='flex flex-col mt-4'>
-                        <label className='text-gray-700 text-base font-medium ' htmlFor='description'>
+                        <label className={`text-gray-700 text-base font-medium ${theme === 'light' ? '' : 'text-white'}`} htmlFor='description'>
                             Long Description
                         </label>
                         <textarea
                             name='longDescript'
                             id='description'
-                            className='block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md  focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40  focus:outline-none focus:ring'
+                            className={`block w-full px-4 py-2 mt-2 text-gray-700 border border-gray-200 rounded-md  focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40  focus:outline-none focus:ring ${theme === 'light' ? '' : 'bg-gray-900'}`}
                         ></textarea>
                     </div>
                     <div className='flex justify-end mt-6'>
-                        <button className='disabled:cursor-not-allowed px-8 py-2.5 leading-5 text-white transition-colors duration-300 transhtmlForm bg-purple-600 rounded-md hover:bg-purple-700 focus:outline-none focus:bg-gray-600'>
+                        <button className='disabled:cursor-not-allowed px-8 py-2.5 leading-5 transition-colors duration-300 transhtmlForm bg-purple-600 rounded-md hover:bg-purple-700 focus:outline-none focus:bg-gray-600 text-white'>
                             Submit
                         </button>
                     </div>
