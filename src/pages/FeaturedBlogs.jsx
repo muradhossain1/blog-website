@@ -1,9 +1,10 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import useAuth from "../hooks/useAuth";
 
 
 const FeaturedBlogs = () => {
-
+    const { theme } = useAuth();
     const [blogs, setBlogs] = useState([])
 
     useEffect(() => {
@@ -15,10 +16,10 @@ const FeaturedBlogs = () => {
     }, [])
     return (
         <div className="overflow-x-auto ">
-            <h2 className="text-2xl md:text-4xl text-center font-bold my-8">Featured Blogs top 10 posts</h2>
+            <h2 className={`text-2xl md:text-4xl text-center font-bold my-8 ${theme === 'light' ? '' : 'text-white'}`}>Featured Blogs top 10 posts</h2>
             <table className="table">
                 {/* head */}
-                <thead className="bg-blue-100 ">
+                <thead className={`${theme === 'light' ? 'bg-green-50' : 'text-white'}`}>
                     <tr>
                         <th></th>
                         <th>Blog Photo</th>

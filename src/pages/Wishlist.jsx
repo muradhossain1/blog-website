@@ -7,7 +7,7 @@ import toast from "react-hot-toast";
 
 
 const Wishlist = () => {
-    const { user } = useAuth();
+    const { user, theme } = useAuth();
     const [blogs, setBlogs] = useState([]);
     const axiosSecure = useAxiosSecure();
 
@@ -36,10 +36,10 @@ const Wishlist = () => {
     }
     return (
         <div className="overflow-x-auto ">
-            <h2 className="text-2xl md:text-4xl text-center font-bold py-8">My Wishlist Blogs</h2>
+            <h2 className={`text-2xl md:text-4xl text-center font-bold my-8 ${theme === 'light' ? '' : 'text-white'}`}>My Wishlist Blogs</h2>
             <table className="table">
                 {/* head */}
-                <thead className="bg-blue-100 ">
+                <thead className={`${theme === 'light' ? 'bg-green-50' : 'text-white'}`}>
                     <tr>
                         <th></th>
                         <th>Blog Photo</th>
