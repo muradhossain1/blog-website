@@ -43,7 +43,7 @@ const Banner = () => {
                     <div
                         className='w-full bg-center bg-cover h-[29rem]'
                         style={{
-                            backgroundImage: `url('https://i.ibb.co.com/mS0Q1pQ/travel.jpg')`,
+                            backgroundImage: `url('https://i.ibb.co.com/n7kFtSM/travel.jpg')`,
                         }}
                     >
                         <div className='flex items-center justify-center w-full h-full bg-gray-700/60 '>

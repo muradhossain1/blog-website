@@ -10,7 +10,7 @@ const PrivateRoute = ({ children }) => {
         return children
     }
     if (loadingUser) {
-        return <div className="flex justify-center items-center min-h-screen"><span className="loading loading-infinity loading-lg"></span></div>
+        return <div className="flex justify-center items-center min-h-screen"><span className="loading loading-dots loading-lg"></span></div>
     }
     if (!user) {
         return <Navigate state={location.pathname} to='/login'></Navigate>;

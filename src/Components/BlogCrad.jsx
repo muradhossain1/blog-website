@@ -49,7 +49,7 @@ const BlogCrad = ({ blog }) => {
                     <button className="w-full px-4 py-2 text-base font-medium text-white bg-purple-600 rounded-md hover:bg-purple-700">
                         <Link to={`/details/${_id}`}>Details</Link>
                     </button>
-                    <button onClick={handleWishlist} className="w-full px-4 py-2 text-base font-medium text-white bg-purple-600 rounded-md hover:bg-purple-700">
+                    <button onClick={handleWishlist} className="w-full px-4 py-2 text-base text-purple-700 font-medium border rounded-md border-purple-600 hover:bg-purple-600 hover:text-white">
                         <Link to={`/my-wishlist`}>Wishlist</Link>
                     </button>
                 </div>
