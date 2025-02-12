@@ -4,10 +4,12 @@ import BlogCrad from "../Components/BlogCrad";
 import NewLetter from "../Components/NewLetter";
 import TrendingNow from "../Components/TrendingNow";
 import EfficientSection from "../Components/EfficientSection";
+import useAuth from "../hooks/useAuth";
 
 
 
 const Home = () => {
+    const { theme } = useAuth();
     const blogs = useLoaderData();
     return (
         <div>
@@ -18,7 +20,7 @@ const Home = () => {
             <main >
                 {/* recent blogs section */}
                 <div>
-                    <h2 className="text-2xl my-8 md:text-4xl text-center font-bold ">Recent Blogs Posts </h2>
+                    <h2 className={`text-2xl my-8 md:text-4xl text-center font-bold ${theme === 'light' ? '' : 'text-white'}`}>Recent Blogs Posts </h2>
                     <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                         {
                             blogs.map(blog => <BlogCrad key={blog._id} blog={blog}></BlogCrad>)

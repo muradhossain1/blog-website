@@ -1,10 +1,12 @@
 import { FaCheckCircle } from "react-icons/fa";
+import useAuth from "../hooks/useAuth";
 
 
 const TrendingNow = () => {
+    const { theme } = useAuth();
     return (
         <div className="">
-            <h2 className="text-2xl md:text-4xl my-8 text-center font-bold ">Tranding Now </h2>
+            <h2 className={`text-2xl my-8 md:text-4xl text-center font-bold ${theme === 'light' ? '' : 'text-white'}`}>Tranding Now </h2>
             <div className="flex flex-col lg:flex-row gap-6">
                 <div className="hero border rounded-lg p-4">
                     <div className="flex flex-col md:flex-row   gap-4 ">
